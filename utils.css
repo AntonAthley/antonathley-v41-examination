@@ -1,0 +1,125 @@
+:root {
+  --mainBright: #fff;
+  --secondaryBright: #cfcfcf;
+  --mainDark: #000000;
+  --secondaryDark: #303030;
+  --accent: #ff0000;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  background-color: var(--secondaryBright);
+}
+
+/* NAVBAR BÖRJAR */
+
+.navbar-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--mainDark);
+  color: var(--mainBright);
+  padding: 0 10%;
+  height: 4rem;
+  width: 100%;
+  border-bottom: 2px solid var(--secondaryDark);
+}
+
+.navbar-items input {
+  display: none;
+}
+
+.navbar-items i {
+  display: none;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+}
+
+h1 {
+  color: var(--mainBright);
+  font-size: clamp(1.5rem, 5vw, 2rem);
+}
+
+.nav-menu a {
+  color: var(--mainBright);
+  text-decoration: none;
+  padding: 0 1rem;
+  margin: 0 auto;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+}
+
+.navbar-container a:hover {
+  color: var(--secondaryBright);
+  border-bottom: 2px solid var(--secondaryBright);
+}
+
+/* SLUT PÅ NAVBAR OCH HEAD  */
+
+/* MEDIA QUERIES  */
+
+@media (max-width: 768px) {
+  /* NAVBAR  */
+
+  .navbar-items i {
+    display: flex;
+  }
+
+  .navbar-items i:hover {
+    display: flex;
+    color: var(--secondaryBright);
+    transform: scale(1.5);
+  }
+
+  .nav-menu li {
+    padding: 1rem;
+  }
+
+  .nav-menu {
+    display: block;
+    text-align: center;
+    background-color: var(--mainDark);
+    border-bottom: 2px solid var(--secondaryDark);
+    border-left: 2px solid var(--secondaryDark);
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40%;
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 100;
+  }
+
+  .navbar-toggle:checked ~ .nav-menu {
+    top: 4rem;
+    opacity: 100;
+    visibility: visible;
+  }
+
+  .navbar-toggle:checked + .navbar-toggle-label i {
+    transform: rotate(180deg);
+  }
+
+  .navbar-toggle:checked + .navbar-toggle-label i:hover {
+    transform: rotate(180deg) scale(1.5);
+    color: var(--secondaryBright);
+  }
+
+  .navbar-toggle-label i {
+    transition: 0.3s;
+  }
+}
+
+@media (max-width: 320px) {
+}
